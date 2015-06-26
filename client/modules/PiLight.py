@@ -15,6 +15,8 @@ def handle(text, mic, profile):
                    number)
     """
 
+    text = text.lower()
+
     # Super simple for now
     if 'off' in text:
         mic.say('Turning off the lights.')
@@ -26,6 +28,6 @@ def handle(text, mic, profile):
 
 
 def isValid(text):
-    return bool(re.search(r'^lights?\b(on|off)\b', text, re.IGNORECASE))
+    return bool(re.search(r'^lights?\s+(on|off)\b', text, re.IGNORECASE))
 
 
